@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script src="aynscfetch.js"></script> -->
+    <button onclick="fetchOneUser()">Fetching Ervin Howell Details</button>
+    <script>
+  async function fetchOneUser(){
+
+const mojombo=await fetch("https://jsonplaceholder.typicode.com/users")
+const mojomboDetails=await mojombo.json();
+
+mojomboDetails.forEach(Details=>{
+    if(Details.name=="Ervin Howell"){
+    console.log("Id: "+Details.id);
+    console.log(" Email: "+Details.email)
+    console.log("Phone Number: "+Details.phone);
+    document.writeln(`<b> Id : ${Details.id} <br>`)
+        document.writeln(`<b> Email : ${Details.email} <br>`)
+        document.writeln(`<b> Phone Number : ${Details.phone} <br>`);
+    }
+
+})
+}
+    </script>
+</body>
+</html>

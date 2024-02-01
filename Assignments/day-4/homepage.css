@@ -1,0 +1,71 @@
+#topnav{
+    background-color: rgb(162, 73, 246);
+    color: white;
+    text-align: center;
+}
+.navbar{
+    background-color: rgb(87, 45, 127);
+    margin-top: -16px;
+    color: brown;
+    height: 70px;
+}
+#one,#two,#three,#four,#five{
+    color: white;
+}
+#dropdown{
+    margin-left: 500px;
+   
+}
+#dropdown-item1,#dropdown-item2{
+    color: white;
+}
+#options{
+   margin-left: 500px;
+    background-color: rgb(68, 25, 108);
+    color: white;
+    margin-bottom: 200px;
+}
+#navbtn{
+   
+    color: white;
+    margin-left : 40px;
+    border: 1px solid white;
+    
+}
+#navbtn:hover{
+    color: rgb(93, 35, 148);
+    background-color: white;
+}
+#navlogo{
+    width: 60px;
+    height: 50px;
+    /* margin-bottom: 5px; */
+}
+#img1{
+    margin-left: 670px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+#img2{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+#sidebar1,#sidebar2,#sidebar3,#sidebar4,#sidebar5,#sidebar6{
+    background-color: rgb(135, 68, 197);
+    color: white;
+    margin-top: 5px ;
+}
+
+#sideandmain{
+    margin-top: -160px;
+}
+#col1,#col2,#col3{
+
+    background-color: whitesmoke ;
+    color:  rgb(135, 68, 197);
+    border-radius: 3%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

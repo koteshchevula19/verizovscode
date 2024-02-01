@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoOnSubmit</title>
+   <style>
+    .red{
+        color:red;
+    }
+   </style>
+</head>
+
+<body>
+    <h1>Employee Details</h1>
+    <fieldset>
+    <form action="" id="empForm">
+        <table>
+            <tr><td><label for="ename">Name: <td><span class="red">*</span></td> </label></td>
+                <td> <input type="text" id="ename"></td>
+            </tr>
+            <tr> <td><label for="eid"> Id: <td><span class="red">*</span></td></label></td>
+                <td> <input type="text" id="eid"></td>
+            </tr>
+            <tr> <td><label for="esal">Salary: <td><span class="red">*</span></td></label></td>
+                <td>  <input type="text" id="esal"></td>
+            </tr>
+            <tr> <td><label for="uname">UserName: <td><span class="red">*</span></td></label></td>
+                <td> <input type="text" id="uname"></td>
+            </tr>
+            <tr>
+                <td><label for="pass">Password: <td> <span class="red">*</span></td> </label></td>
+                <td> <input type="password" id="pass"></td>
+            </tr>
+            <tr>
+                <td><label for="cnfpass">confirmPassword: <td> <span class="red">*</span></td></label></td>
+                <td>  <input type="password" id="cnfpass"></td>
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile: <td><span class="red">*</span></td></label></td>
+                <td> <input type="text" id="mobile"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email: <td><span class="red">*</span></td></label></td>
+                <td>  <input type="text" id="email"></td>
+            </tr>
+            <tr colspan="2">
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+    <script>
+        let eform = document.getElementById("empForm");
+        eform.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let name = eform.ename.value;
+            let id = eform.eid.value;
+            let sal = eform.esal.value;
+            let uname = eform.uname.value;
+            let pass = eform.pass.value;
+            let cnfpass = eform.cnfpass.value;
+            let mobile = eform.mobile.value;
+            let email = eform.email.value;
+           
+            if (pass == "" || pass.length < 8) {
+                alert("Enter valid password");
+            }
+            else {
+                console.log(pass);
+            }
+            if (cnfpass != pass) {
+                alert("Enter valid confirm password");
+            }
+            else {
+                console.log(cnfpass);
+            }
+           
+
+                if(email.endsWith("@gmail.com")){
+                    if(email.startWith('[a-zA-Z]'))
+                    console.log(email);
+                }
+                else{
+                    alert("Enter valid email");
+                }
+
+
+
+                    console.log(name + " " + id + " " + sal + " ");
+        })
+    </script>
+</body>
+
+</html>

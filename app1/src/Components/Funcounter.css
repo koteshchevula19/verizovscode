@@ -1,0 +1,19 @@
+#count{
+   color: rgb(27, 15, 39);
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px groove #a82b2b ;
+}
+
+#button{
+    background-color: rgb(27, 15, 39);
+    color: white;
+    border: 1px groove #a82b2b ;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

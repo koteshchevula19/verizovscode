@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoOnSubmit</title>
+   <style>
+    .red{
+        color:red;
+    }
+    table{
+        border-collapse: collapse;
+        width: 50%;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        background-color: #fff;
+        color: #ee00ff7b;
+        font-family: sans-serif;
+        box-shadow: 0  0 10px rgba(0,0,0,1);
+        margin-left:200px
+    }
+    h4{
+        text-align: center;
+        color: darkgreen;
+    }
+   
+    .line{
+       margin-left: 290px;
+       margin-right: 290px;
+       margin-top: -10px;
+      
+    }
+   </style>
+</head>
+
+<body>
+    <h4>Employee Details</h4>
+    <hr class="line">
+    <form action="" id="empForm">
+        <table>
+            <tr><td><label for="ename">Name: <td><span class="red">*</span></td> </label></td>
+                <td> <input type="text" id="ename" required minlength="7" maxlength="12"></td>
+            </tr>
+            <tr> <td><label for="eid"> Id: <td><span class="red">*</span></td></label></td>
+                <td> <input type="text" id="eid" min="101" max="199" required></td>
+            </tr>
+            <tr> <td><label for="esal">Salary: <td><span class="red">*</span></td></label></td>
+                <td>  <input type="text" id="esal" min="100000" max="1000000" required></td>
+            </tr>
+            <tr> <td><label for="uname">UserName: <td><span class="red">*</span></td></label></td>
+                <td> <input type="text" id="euname" required></td>
+            </tr>
+            <tr>
+                <td><label for="pass">Password: <td> <span class="red">*</span></td> </label></td>
+                <td> <input type="password" id="epass" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()-_+=])[0-9a-zA-Z!@#$%^&*()-_+=]{8,}"></td>
+            </tr>
+            <tr>
+                <td><label for="cnfpass">confirmPassword: <td> <span class="red">*</span></td></label></td>
+                <td>  <input type="password" id="ecnfpass" required></td>
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile: <td><span class="red">*</span></td></label></td>
+                <td> <input type="text" id="emobile" minlength="10" maxlength="10" pattern="^(?=.*[6-9])[0-9]{10}"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email: <td><span class="red">*</span></td></label></td>
+                <td>  <input type="text" id="eemail"></td>
+            </tr> 
+           
+            <tr colspan="3">
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        let eform = document.getElementById("empForm");
+        eform.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let name = eform.ename.value;
+            let id = parseInt(eform.eid.value);
+            let sal = eform.esal.value;
+            let uname = eform.euname.value;
+            let pass = eform.epass.value;
+            let cnfpass = eform.ecnfpass.value;
+            let mobile = eform.emobile.value;
+            let email = eform.eemail.value;
+
+            if((id!=Number)||(id<101||id>199)){
+                alert("Enter valid ID");
+            }
+            else{
+                console.log(id);
+            }
+            if (sal!=Number||(sal<100000||sal>=1000000)) {
+                console.log("Enter a valid salary ");
+            } else {
+                console.log(sal);
+            }
+           
+            if (pass == "" || pass.length < 8) {
+                alert("Enter valid password");
+            }
+            else {
+                console.log(pass);
+            }
+            if (cnfpass != pass) {
+                alert("Please enter same password");
+            }
+            else {
+                console.log(cnfpass);
+            }
+             
+                ename.value="";
+                eid.value="";
+                esal.value="";
+                euname.value="";
+                epass.value="";
+                ecnfpass.value="";
+                emobile.value="";
+                eemail.value="";
+
+
+               
+
+
+
+
+
+                    console.log(name + " " + id + " " + sal + " "+ email);
+        })
+    </script>
+</body>

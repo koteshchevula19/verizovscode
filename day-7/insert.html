@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Employeeclass.js"></script>
+    scr
+</head>
+<body>
+   <form action="">
+    <table>
+        <tr>
+            <td>
+                <label for="ename"> Enter your Name</label>
+            </td>
+            <td>
+                <input type="text" name="ename" id="ename" value="">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="eId">Emp Id</label></td>
+            <td><input type="101" name="eId" id="eId" value="" required></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="eSal">eSal</label>
+            </td>
+            <td><input type="number" name="eSal" id="eSal" value="" required></td>
+        </tr>
+        <tr><td><input type="button" value="submit" onclick="insert()" required></td></tr>
+        
+    </table>
+   </form>
+   <script>
+    function insert() {
+       let name= document.getElementById("ename").value
+       let id= document.getElementById("eId").value
+       let sal=document.getElementById("eSal").value
+       insertEmp(name,id,sal);
+       
+
+        }
+   </script>
+</body>
+</html>

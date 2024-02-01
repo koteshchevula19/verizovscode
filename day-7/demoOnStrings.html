@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoOnStrings</title>
+</head>
+<body>
+    <script>
+        let str="  Kotesh  "
+        console.log(str.length);
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase()); 
+        console.log(str.trimStart().length)
+        confirm("Are you sure you want to continue");
+        document.writeln(str);
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+        console.log(typeof str);
+        console.log(str.trim().length);
+        console.log(str.length);
+        console.log(str.substring(3,8));
+        let name=" Hello World how are you today ";
+        console.log(name.trimLeft().length);
+        console.log(name.trimRight().length);
+        console.log(name.trimStart().length);
+        console.log(name.padStart(35,'0'));
+
+        if(name.match("how"))
+        {
+            console.log("Match Found")
+        }
+        else
+        console.log("Match Not Found");
+        let s1="Hai this is"
+        console.log(s1.slice(2)); //i this is
+        console.log(s1.slice(4,7));//thi
+        console.log(s1.slice(-4)); //s is
+        console.log(s1.slice(-7,-1)); //this i
+        
+    </script>
+    
+</body>
+</html>

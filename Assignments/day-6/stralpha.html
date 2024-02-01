@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels Consonants</title>
+    <style>
+        h4 {
+            text-align: center;
+            display: inline-block;
+        }
+
+        input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            box-shadow:  0 0 10px rgba(0, 0, 0, 0.1) ;
+        }
+
+        body {
+            background-color: rgb(190, 32, 218);
+        }
+
+        #result{
+            background-color: rgb(190, 32, 218);
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+    <hr>
+    <h4>Vowels Consonants</h4><br>
+    <label for="alpha">Enter text</label>
+    <input type="text" name="alpha" id="alpha" title="enter only text">
+    <input type="submit" value="submit" onclick="countvowelsconsonants()"><hr><br>
+   
+    <script>
+        function countvowelsconsonants() {
+
+            let text = document.getElementById("alpha").value;
+            text.trim();
+            let cVowels = 0;
+            let cConsonants = 0;
+            let cSpaces = 0;
+            let cSpecials = 0
+            for (let i = 0; i < text.length; i++) {
+                if (text.charAt(i) == "a" || text.charAt(i) == "e" || text.charAt(i) == "i" || text.charAt(i) == "o" || text.charAt(i) == "u" || text.charAt(i) == "A" || text.charAt(i) == "E" || text.charAt(i) == "I" || text.charAt(i) == "O" || text.charAt(i) == "U") {
+                    cVowels++;
+                }
+                else if (text.charAt(i) == " " || text.charAt(i) == " ' ") {
+                    cSpaces++;
+                }
+                else if (text.charAt(i) == ',' || text.charAt(i) == '.' || text.charAt(i) == "!" || text.charAt(i) == "?" || text.charAt(i) == '&') {
+                    cSpecials++;
+                }
+                else {
+                    cConsonants++;
+                }
+            }
+            alert("Vowels: " + cVowels + " Consonants: " + cConsonants + " Words: " + cSpaces + " SpecialCharcters: " + cSpecials);
+
+            
+                var resultMessage = "Showing Results....<br>";
+            resultMessage += "Number of vowels: " + cVowels+ "<br>";
+            resultMessage += "Number of consonants: " +cConsonants + "<br>";
+            resultMessage += "Number of special characters: " + cSpecials + "<br>";
+            resultMessage += "Number of words: " + cSpaces;
+          
+            document.getElementById("result").innerHTML = resultMessage;
+            document.getElementById("alpha").value="";
+        }
+
+
+        
+    </script>
+</body>
+
+</html>

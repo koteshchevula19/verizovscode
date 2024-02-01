@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo On Geo-Location</title>
+</head>
+
+<body>
+    <h1>Demo On Geo Loction</h1>
+    <button type="submit" id="location">Submit</button>
+    <script>
+        document.getElementById("location").addEventListener("click", (e) => {
+            // e.preventDefault();
+            // navigator.geolocation.getCurrentPosition((position)=>{
+            //     console.log(position);
+            // })
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    let lat = position.coords.latitude;
+                    let long = position.coords.longitude;
+                    console.log(lat);
+                    console.log(long);
+                    console.log("Lat: " + lat);
+                    console.log("Long: " + long);
+                    // let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyC-999999999999999999999999999999999999999999999999999999999999999
+
+                }, error => {
+                  let err1=error.PERMISSION_DENIED;
+                  let err2=error.POSITION_UNAVAILABLE;
+                  let err3=error.TIMEOUT;
+                  let err4=error.UNKNOWN_ERROR;
+                  let err=[err1,err2,err3,err4];
+                  console.log(err);
+                  for(let truthy of err){
+                    if(truthy){
+                        console.log("error"+truthy);
+                    }
+                  }
+                });
+
+            }
+            else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        });
+
+        
+    </script>
+</body>
+
+</html>

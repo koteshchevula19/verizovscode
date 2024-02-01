@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoOndate</title>
+</head>
+
+<body>
+    <h1>Demo on Date Method Showing outputs in console</h1>
+    <script>
+        // let date=new Date();
+        // console.log(date);
+        // console.log(new Date(10000));
+        // console.log(new Date(2023,11));
+        // console.log(new Date("1999-04-23"));
+        // console.log(date.getFullYear());
+        // console.log(date.getMonth());
+        // console.log(date.getDate());
+        // console.log(date.getDay());
+        // console.log(date.getHours());
+        // console.log(date.getMinutes());
+        // console.log(date.getSeconds());
+        // console.log(date.getMilliseconds());
+        // console.log(date.getTime());
+        // console.log(date.toLocaleDateString());
+        // console.log(date.toLocaleTimeString());
+        // console.log(date.toLocaleString());
+        // console.log(date.toTimeString());
+        // console.log(date.toUTCString());
+        // console.log(date.valueOf());
+        // console.log(date.getTimezoneOffset());
+        // console.log(date.getTimezoneAbbr());
+        // console.log(date.getTimezoneName());
+
+        const date = new Date('20 December 2019 14:48');
+
+        console.log(date[Symbol.toPrimitive]('string'));
+        // Expected output: "Fri Dec 20 2019 14:48:00 GMT+0530 (India Standard Time)"
+
+        console.log(date[Symbol.toPrimitive]('number'));
+
+        console.log(date.getMonth()+1);
+        const currentDate = new Date();
+
+// Get only the date as a string
+const formattedDate = currentDate.toLocaleDateString(); // Adjust 'en-US' based on your desired locale
+
+console.log( formattedDate);
+
+    </script>
+</body>
+
+</html>

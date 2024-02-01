@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Inputs</title>
+    <style>
+        table,fieldset {
+            background-color: rgb(175, 51, 150);
+            margin: 100px;
+        }
+        table{
+            margin-left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <fieldset>
+        <form action="">
+
+            <table>
+
+                <tr>
+                    <td><label for="text"> UName</label></td>
+                    <td><input type="text" name="" id="text" class="class-1"></td>
+                </tr>
+                <tr>
+                    <td><label for="number">UID</label></td>
+                    <td><input type="number" name="" id="number" class="class-1"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">UEmail</label></td>
+                    <td><input type="email" name="" id="email" class="class-1"></td>
+                </tr>
+                <tr>
+                    <td><label for="mobile"> UMob</label></td>
+                    <td><input type="tel" name="" id="mobile" class="class-1">
+                </tr>
+                <tr colspan="3">
+                    <td> <button class="btn btn-success" onclick="pass()">Submit</button></td>
+
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+
+
+    <script>
+        function pass() {
+            const useArray = document.getElementsByClassName("class-1");
+
+
+            document.write(useArray[0].value + " " + useArray[1].value + " " + useArray[2].value + " " + useArray[3].value);
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #130711;
+            text-align: center;
+            margin: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            background-color: #260606c1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(67, 63, 63, 0.1);
+           
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: white ;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color:  #130711;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="bankForm">
+
+        <table>
+            <tr>
+            <td><label for="accountId">Account ID:</label></td>
+            <td><input type="text" id="accountId" name="accountId" required></td>
+        </tr>
+
+            <tr><td><label for="accountHolderName">Account Holder Name:</label></td>
+            <td><input type="text" id="accountHolderName" name="accountHolderName" required></td>
+        </tr>
+
+        <tr>
+            <td><label for="accountType">Account Type:</label></td>
+            </tr>
+            <tr>    
+           <td> <label for="accountType1">Current</label>
+           <input type="radio" value="Current" id="accounType1" name="accountType"></td>
+           <td><label for="accountType2">Savings</label>
+            <input type="radio" value="Savings" id="accounType2" name="accountType"></td>
+        </tr>
+
+        <tr>
+            <td><label for="ifscNumber">IFSC Number:</label></td>
+            <td><input type="text" id="ifscNumber" name="ifscNumber" required></td>
+
+        </tr>
+
+        <tr>
+            <td><label for="location">Location:</label></td>
+            <td><select name="" id="location">
+                <option value="">Select a Location</option>
+            <option value="Hyderabad" name="city">Hyderabad</option>
+            <option value="Chennai" name="city">Chennai</option>
+            <option value="Bangalore" name="city">Bangalore</option>
+            <option value="New Delhi" name="city">New Delhi</option>
+        </select></td>
+
+        </tr>
+    
+            <td><label for="pinNumber">Pin Number:</label></td>
+            <td><input type="password" id="pinNumber" name="pinNumber" required></td>
+        </tr>
+    
+        <tr>
+        <td><button type="button" onclick="withdraw()">Withdraw</button></td></tr>
+        <tr>
+        <td><button type="button" onclick="deposit()">Deposit</button></td></tr>
+        <tr>
+        <td><button type="button" onclick="changePin()">Change Pin</button></td></tr>
+    </table>
+    </form>
+
+    <script>
+        
+        function getAccountDetails() {
+            const accountId = document.getElementById("accountId").value;
+            const storedDetails = localStorage.getItem(accountId);
+            return storedDetails ? JSON.parse(storedDetails) : { pin: "", balance: 0 };
+        }
+
+        
+        function updateAccountDetails(accountDetails) {
+            const accountId = document.getElementById("accountId").value;
+            localStorage.setItem(accountId, JSON.stringify(accountDetails));
+        }
+
+      
+        function withdraw() {
+            const accountDetails = getAccountDetails();
+            const pinNumber = document.getElementById("pinNumber").value;
+
+            if (pinNumber === accountDetails.pin) {
+                const amount = parseFloat(prompt("Enter the withdrawal amount:"));
+
+                if (!isNaN(amount) && amount > 0 && amount <= accountDetails.balance) {
+                    accountDetails.balance -= amount;
+                    updateAccountDetails(accountDetails);
+                    alert("Withdrawal successful!\nNew balance: " + accountDetails.balance);
+                } else {
+                    alert("Invalid withdrawal amount!");
+                }
+            } else {
+                alert("Incorrect PIN!");
+            }
+        }
+
+
+        function deposit() {
+            const accountDetails = getAccountDetails();
+            const amount = parseFloat(prompt("Enter the deposit amount:"));
+
+            if (!isNaN(amount) && amount > 0) {
+                accountDetails.balance += amount;
+                updateAccountDetails(accountDetails);
+                alert("Deposit successful!\nNew balance: " + accountDetails.balance);
+            } else {
+                alert("Invalid deposit amount!");
+            }
+        }
+
+
+        function changePin() {
+            const accountDetails = getAccountDetails();
+            const oldPin = document.getElementById("pinNumber").value;
+            const newPin = prompt("Enter the new PIN:");
+
+            if (oldPin === accountDetails.pin && newPin !== null) {
+                accountDetails.pin = newPin;
+                updateAccountDetails(accountDetails);
+                alert("PIN changed successfully!");
+            } else {
+                alert("Incorrect PIN or no new PIN entered!");
+            }
+        }
+    </script>
+</body>
+
+</html>
